@@ -8,7 +8,7 @@ This is a project from Udacity here is the [repo link](https://github.com/udacit
 
 ### How To Play The Game
 
-
+Need to update this section and also add screen shot of working game and a link to live demo once project is complete
 
 ## Project Specifications
 
