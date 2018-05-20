@@ -1,11 +1,17 @@
 // Enemies our player must avoid
-var Enemy = function() {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
+/*
+TODO: Constructor function for the enemy (bugs)
+x and y will be the coordinates
+*/
+var Enemy = function(x, y) {
+	// Variables applied to each of our instances go here,
+	// we've provided one for you to get started
 
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
-    this.sprite = 'images/enemy-bug.png';
+	// The image/sprite for our enemies, this uses
+	// a helper we've provided to easily load images
+	this.sprite = 'images/enemy-bug.png';
+	this.x = x;
+	this.y = y;
 };
 
 // Update the enemy's position, required method for game
@@ -26,8 +32,16 @@ Enemy.prototype.render = function() {
 // a handleInput() method.
 
 
-// Now instantiate your objects.
+
 // Place all enemy objects in an array called allEnemies
+// Instances of Enemy for access to Enemy.protype methods
+const allEnemies = [bug1, bug2, bug3];
+// Now instantiate your objects.
+// arguments are coordinates
+var bug1 = new Enemy(20, 100);
+var bug2 = new Enemy(20, 150);
+var bug3 = new Enemy(20, 200);
+
 // Place the player object in a variable called player
 
 
