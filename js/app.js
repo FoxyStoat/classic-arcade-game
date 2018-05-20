@@ -24,9 +24,14 @@ Enemy.prototype.update = function(dt) {
 	// all computers.
 	// movement on the horizontal x axis only
 	this.x += this.movement * dt;
-	// When bugs go off canvas restart back on the path
+	/*
+	TODO: When the bugs go off canvas restart back at the start of the
+	path but with a new random movement speed between 155 and 330
+	*/
 		if (this.x >= 505) {
 		this.x = -100;
+		this.movement = Math.floor((Math.random() * 330) + 155)
+		// console.log(this.movement);
 	} 
 };
 
@@ -60,7 +65,7 @@ Player.prototype.render = function() {
 
 // Now instantiate your objects.
 // Instances of Enemy for access to Enemy.protype methods
-// arguments are coordinates x & y & the third argument is movement speed
+// arguments are coordinates x & y & the third argument is initial movement speed
 var bug1 = new Enemy(-100, 60, 230);
 var bug2 = new Enemy(-20, 145, 170);
 var bug3 = new Enemy(40, 225, 200);
