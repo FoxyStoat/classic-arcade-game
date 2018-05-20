@@ -63,6 +63,38 @@ Player.prototype.render = function() {
 	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+// Player handleInput() method
+/*
+TODO: This sets the direction of the player, and uses
+the event listener directly below.
+*/
+Player.prototype.handleInput = function(arrowKeys) {
+	// up and down = y axis
+	if (arrowKeys === 'up') {
+			this.y -= 100;
+		} else if (arrowKeys === 'down') {
+			this.y += 100;
+		// left & right = x axis
+		} else if (arrowKeys === 'left') {
+			this.x -=  100;
+		} else if (arrowKeys === 'right') {
+			this.x += 100;
+	}
+};
+
+// This listens for key presses and sends the keys to your
+// Player.handleInput() method. You don't need to modify this.
+document.addEventListener('keyup', function(e) {
+	var allowedKeys = {
+		37: 'left',
+		38: 'up',
+		39: 'right',
+		40: 'down'
+	};
+
+	player.handleInput(allowedKeys[e.keyCode]);
+});
+
 // Now instantiate your objects.
 // Instances of Enemy for access to Enemy.protype methods
 // arguments are coordinates x & y & the third argument is initial movement speed
@@ -76,18 +108,7 @@ var allEnemies = [bug1, bug2, bug3];
 // Instance of Player
 var player = new Player(200, 420);
 
-// This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
-document.addEventListener('keyup', function(e) {
-    var allowedKeys = {
-        37: 'left',
-        38: 'up',
-        39: 'right',
-        40: 'down'
-    };
 
-    player.handleInput(allowedKeys[e.keyCode]);
-});
 
 /*
 Resources Used to help build this:
