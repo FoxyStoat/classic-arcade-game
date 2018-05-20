@@ -64,7 +64,7 @@ var allEnemies = [bug1, bug2, bug3];
 
 // Place the player object in a variable called player
 // Instance of Player
-var player = new Player(100, 300);
+var player = new Player(200, 420);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
