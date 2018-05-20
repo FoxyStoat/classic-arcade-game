@@ -88,3 +88,15 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+/*
+Resources Used to help build this:
+* For generating a random speed for the movement of bugs
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+
+* Used below resource to help with coordinates
+https://www.w3schools.com/graphics/canvas_coordinates.asp
+
+* Understanding the engine.js
+https://www.youtube.com/watch?v=oLSu3zc2jSA
+*/
