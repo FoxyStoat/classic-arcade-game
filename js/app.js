@@ -106,7 +106,7 @@ var allEnemies = [bug1, bug2, bug3];
 
 // Place the player object in a variable called player
 // Instance of Player
-var player = new Player(200, 420);
+var player = new Player(200, 400);
 
 
 
