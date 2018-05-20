@@ -17,12 +17,17 @@ var Enemy = function(x, y, movement) {
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
+// Reference for size of canvas: width = 505, height = 606;
 Enemy.prototype.update = function(dt) {
 	// You should multiply any movement by the dt parameter
 	// which will ensure the game runs at the same speed for
 	// all computers.
 	// movement on the horizontal x axis only
-	this.x += this.movement * dt; 
+	this.x += this.movement * dt;
+	// When bugs go off canvas restart back on the path
+		if (this.x >= 505) {
+		this.x = -100;
+	} 
 };
 
 // Draw the enemy on the screen, required method for game
@@ -55,10 +60,10 @@ Player.prototype.render = function() {
 
 // Now instantiate your objects.
 // Instances of Enemy for access to Enemy.protype methods
-// arguments are coordinates
-var bug1 = new Enemy(20, 60, 50);
-var bug2 = new Enemy(20, 145, 50);
-var bug3 = new Enemy(20, 225, 50);
+// arguments are coordinates x & y & the third argument is movement speed
+var bug1 = new Enemy(-100, 60, 230);
+var bug2 = new Enemy(-20, 145, 170);
+var bug3 = new Enemy(40, 225, 200);
 // Place all enemy objects in an array called allEnemies
 var allEnemies = [bug1, bug2, bug3];
 
