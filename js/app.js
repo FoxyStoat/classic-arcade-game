@@ -3,7 +3,7 @@ TODO: Constructor function for the enemy (bugs)
 x and y will be the coordinates
 Enemies our player must avoid
 */
-var Enemy = function(x, y) {
+var Enemy = function(x, y, movement) {
 	// Variables applied to each of our instances go here,
 	// we've provided one for you to get started
 
@@ -12,14 +12,17 @@ var Enemy = function(x, y) {
 	this.sprite = 'images/enemy-bug.png';
 	this.x = x;
 	this.y = y;
+	this.movement = movement;
 };
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
+	// You should multiply any movement by the dt parameter
+	// which will ensure the game runs at the same speed for
+	// all computers.
+	// movement on the horizontal x axis only
+	this.x += this.movement * dt; 
 };
 
 // Draw the enemy on the screen, required method for game
@@ -50,14 +53,14 @@ Player.prototype.render = function() {
 	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Place all enemy objects in an array called allEnemies
-// Instances of Enemy for access to Enemy.protype methods
-const allEnemies = [bug1, bug2, bug3];
 // Now instantiate your objects.
+// Instances of Enemy for access to Enemy.protype methods
 // arguments are coordinates
-var bug1 = new Enemy(20, 100);
-var bug2 = new Enemy(20, 150);
-var bug3 = new Enemy(20, 200);
+var bug1 = new Enemy(20, 100, 50);
+var bug2 = new Enemy(20, 150, 50);
+var bug3 = new Enemy(20, 200, 50);
+// Place all enemy objects in an array called allEnemies
+var allEnemies = [bug1, bug2, bug3];
 
 // Place the player object in a variable called player
 // Instance of Player
