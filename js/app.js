@@ -1,7 +1,7 @@
-// Enemies our player must avoid
 /*
 TODO: Constructor function for the enemy (bugs)
 x and y will be the coordinates
+Enemies our player must avoid
 */
 var Enemy = function(x, y) {
 	// Variables applied to each of our instances go here,
@@ -24,14 +24,21 @@ Enemy.prototype.update = function(dt) {
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 // Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
-
-
+/*
+TODO: Constructor function for the player
+character, x and y will be the coordinates
+This class requires an update(), render() and
+a handleInput() method.
+*/
+var Player = function(x, y) {
+	this.sprite = "images/char-boy.png";
+	this.x = x;
+	this.y = y;
+};
 
 // Place all enemy objects in an array called allEnemies
 // Instances of Enemy for access to Enemy.protype methods
@@ -43,8 +50,7 @@ var bug2 = new Enemy(20, 150);
 var bug3 = new Enemy(20, 200);
 
 // Place the player object in a variable called player
-
-
+var player = new Player(100, 300);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
