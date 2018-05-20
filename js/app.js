@@ -56,9 +56,9 @@ Player.prototype.render = function() {
 // Now instantiate your objects.
 // Instances of Enemy for access to Enemy.protype methods
 // arguments are coordinates
-var bug1 = new Enemy(20, 100, 50);
-var bug2 = new Enemy(20, 150, 50);
-var bug3 = new Enemy(20, 200, 50);
+var bug1 = new Enemy(20, 60, 50);
+var bug2 = new Enemy(20, 145, 50);
+var bug3 = new Enemy(20, 225, 50);
 // Place all enemy objects in an array called allEnemies
 var allEnemies = [bug1, bug2, bug3];
 
