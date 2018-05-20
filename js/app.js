@@ -71,9 +71,9 @@ the event listener directly below.
 Player.prototype.handleInput = function(arrowKeys) {
 	// up and down = y axis
 	if (arrowKeys === 'up') {
-			this.y -= 100;
+			this.y -= 82;
 		} else if (arrowKeys === 'down') {
-			this.y += 100;
+			this.y += 82;
 		// left & right = x axis
 		} else if (arrowKeys === 'left') {
 			this.x -=  100;
