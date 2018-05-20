@@ -44,6 +44,12 @@ var Player = function(x, y) {
 Player.prototype.update = function() {
 };
 
+// Player render()
+// Draw the player on the screen, required method for game
+Player.prototype.render = function() {
+	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
 // Place all enemy objects in an array called allEnemies
 // Instances of Enemy for access to Enemy.protype methods
 const allEnemies = [bug1, bug2, bug3];
