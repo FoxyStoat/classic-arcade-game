@@ -40,6 +40,10 @@ var Player = function(x, y) {
 	this.y = y;
 };
 
+// Player update()
+Player.prototype.update = function() {
+};
+
 // Place all enemy objects in an array called allEnemies
 // Instances of Enemy for access to Enemy.protype methods
 const allEnemies = [bug1, bug2, bug3];
@@ -50,6 +54,7 @@ var bug2 = new Enemy(20, 150);
 var bug3 = new Enemy(20, 200);
 
 // Place the player object in a variable called player
+// Instance of Player
 var player = new Player(100, 300);
 
 // This listens for key presses and sends the keys to your
