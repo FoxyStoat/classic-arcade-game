@@ -25,12 +25,12 @@ Enemy.prototype.update = function(dt) {
 	// movement on the horizontal x axis only
 	this.x += this.movement * dt;
 	/*
-	TODO: When the bugs go off canvas restart back at the start of the
-	path but with a new random movement speed between 155 and 330
+	TODO: When the bugs go off canvas restart back at the start of
+	the path but with a new random integer for movement speed
 	*/
-		if (this.x >= 505) {
+	if (this.x >= 505) {
 		this.x = -100;
-		this.movement = Math.floor((Math.random() * 330) + 155)
+		this.movement = Math.floor(Math.random() * 250) + 150
 		// console.log(this.movement);
 	} 
 };
