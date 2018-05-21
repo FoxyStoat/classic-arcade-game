@@ -54,7 +54,26 @@ var Player = function(x, y) {
 };
 
 // Player update()
+/*
+TODO: Check to see if the player has reached the water for a win (ftw)
+If the player reaches the water, reset the player back to original
+coordinates after half a second.
+*/
 Player.prototype.update = function() {
+	if (this.y <= 10) {
+		// arrow function to inherit 'this' value from surrounding content
+		setTimeout(() => {
+			this.resetPlayer();
+		}, 500);
+	}
+};
+
+/*
+TODO: This resets the player back to it's original coordinates
+*/
+Player.prototype.resetPlayer = function() {
+	this.x = 200;
+	this.y = 400;
 };
 
 // Player render()
@@ -108,8 +127,6 @@ var allEnemies = [bug1, bug2, bug3, bug4];
 // Place the player object in a variable called player
 // Instance of Player
 var player = new Player(200, 400);
-
-
 
 /*
 Resources Used to help build this:
