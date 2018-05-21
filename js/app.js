@@ -101,8 +101,9 @@ document.addEventListener('keyup', function(e) {
 var bug1 = new Enemy(-100, 60, 230);
 var bug2 = new Enemy(-20, 145, 170);
 var bug3 = new Enemy(40, 225, 200);
+var bug4 = new Enemy(40, 225, 240);
 // Place all enemy objects in an array called allEnemies
-var allEnemies = [bug1, bug2, bug3];
+var allEnemies = [bug1, bug2, bug3, bug4];
 
 // Place the player object in a variable called player
 // Instance of Player
