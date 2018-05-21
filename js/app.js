@@ -58,13 +58,32 @@ var Player = function(x, y) {
 TODO: Check to see if the player has reached the water for a win (ftw)
 If the player reaches the water, reset the player back to original
 coordinates after half a second.
+The second bit of code will keep the player within the canvas boundaries
 */
 Player.prototype.update = function() {
-	if (this.y <= 10) {
+	// If character reaches the water
+	if (this.y <= 0) {
 		// arrow function to inherit 'this' value from surrounding content
 		setTimeout(() => {
 			this.resetPlayer();
 		}, 500);
+	}
+
+	/*
+	TODO: Keep player within the canvas.  X & Y axis don't allow movement
+	beyond 0 and beyond 400 coordinates, otherwise out of bounds.
+	*/
+	// X axis
+	if (this.x < 0) {
+		this.x = 0;
+	} else if (this.x > 400) {
+		this.x = 400;
+	}
+	// Y axis
+	if (this.y < 0) {
+		this.y = 0;
+	} else if (this.y > 400) {
+		this.y = 400;
 	}
 };
 
