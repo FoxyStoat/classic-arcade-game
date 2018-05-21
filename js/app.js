@@ -56,9 +56,10 @@ var Player = function(x, y) {
 // Player update()
 /*
 TODO: Check to see if the player has reached the water for a win (ftw)
-If the player reaches the water, reset the player back to original
-coordinates after half a second.
-The second bit of code will keep the player within the canvas boundaries
+- If the player reaches the water, reset the player back to original
+	coordinates after half a second.
+- The second bit of code will keep the player within the canvas boundaries
+- And also check if a collision has happened between bug and player
 */
 Player.prototype.update = function() {
 	// If character reaches the water
@@ -84,6 +85,29 @@ Player.prototype.update = function() {
 		this.y = 0;
 	} else if (this.y > 400) {
 		this.y = 400;
+	}
+
+	// Check to see if a collision happened
+	this.collisionCheck();
+};
+
+/*
+TODO: Check for collisions between enemy bugs and the player if a
+collision happens reset the player back to original coordinates
+For reference image is 101px width by 171px height
+*/
+Player.prototype.collisionCheck = function() {
+	// loop through the enemy array
+	for (var i = 0; i < allEnemies.length; i++) {
+		const bug = allEnemies[i];
+		if (this.x <= bug.x + 60 && //number is bug hitbox width
+			this.x + 50 >= bug.x && //number is player hitbox width
+			this.y <= bug.y + 80 && //number is bug hitbox height
+			70 + this.y >= bug.y) { // number is player hitbox height
+			// console.log('Hit box collision!');
+			// Send player back to original coordinates
+			this.resetPlayer();
+		}
 	}
 };
 
@@ -157,4 +181,8 @@ https://www.w3schools.com/graphics/canvas_coordinates.asp
 
 * Understanding the engine.js
 https://www.youtube.com/watch?v=oLSu3zc2jSA
+
+* Help with unstanding how the collision works
+https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+https://discussions.udacity.com/t/collision-detection-not-working-player-also-no-longer-moves/187116/
 */
