@@ -184,6 +184,12 @@ var Gem = function(x, y) {
 	this.y = y;
 };
 
+// Gem render()
+// Draw the Gem on the screen, required method for game
+Gem.prototype.render = function() {
+	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
 
 /*
 Resources Used to help build this:
