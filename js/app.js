@@ -61,7 +61,7 @@ TODO: Check to see if the player has reached the water for a win (ftw)
 - The second bit of code will keep the player within the canvas boundaries
 - And also check if a collision has happened between bug and player
 */
-Player.prototype.update = function() {
+Player.prototype.update = function(dt) {
 	// If character reaches the water
 	if (this.y <= 0) {
 		// arrow function to inherit 'this' value from surrounding content
@@ -189,28 +189,45 @@ var Gem = function(x, y) {
 Gem.prototype.render = function() {
 	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
-
-// Gem update()
-// Update the gems position, required method for game
-Gem.prototype.update = function() {
+ 
+// Gem update() method Update the gems position
+Gem.prototype.update = function(x, y) {
+	// Coordinate options of gem to be located along x axis
+	var gemXCoordinates = [0, 100, 200, 300, 400];
+	// Coordinate options of gem to be located along y axis
+	var gemYCoordinates = [72, 154, 236];
+	/*
+	TODO: If the player has reached the water then generate a gem in a
+	random place on the road
+	*/
+	if (player.y <= 0) {
+		// arrow function to inherit 'this' value from surrounding content
+		setTimeout(() => {
+			this.x = gemXCoordinates[Math.floor(Math.random()*gemXCoordinates.length)];
+			this.y = gemYCoordinates[Math.floor(Math.random()*gemYCoordinates.length)];
+		}, 500);
+	}
 };
 
-// Instances of Gem
-// arguments are coordinates x & y axis
-var gem = new Gem(200, 60); // top row
+// Instantiate Gem
+var gem = new Gem();
 
 /*
 Resources Used to help build this:
 * For generating a random speed for the movement of bugs
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
-* Used below resource to help with coordinates
+* Used below resource to help with coordinates:
 https://www.w3schools.com/graphics/canvas_coordinates.asp
 
-* Understanding the engine.js
+* Understanding the engine.js:
 https://www.youtube.com/watch?v=oLSu3zc2jSA
 
-* Help with unstanding how the collision works
+* Help with unstanding how the collision works:
 https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
 https://discussions.udacity.com/t/collision-detection-not-working-player-also-no-longer-moves/187116/
+
+* Used below resource to help generate a random gem coordinate from array:
+https://css-tricks.com/snippets/javascript/select-random-item-array/
+
 */
