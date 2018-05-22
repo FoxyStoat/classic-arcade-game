@@ -195,6 +195,10 @@ Gem.prototype.render = function() {
 Gem.prototype.update = function() {
 };
 
+// Instances of Gem
+// arguments are coordinates x & y axis
+var gem = new Gem(200, 60); // top row
+
 /*
 Resources Used to help build this:
 * For generating a random speed for the movement of bugs
