@@ -190,6 +190,10 @@ Gem.prototype.render = function() {
 	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+// Gem update()
+// Update the gems position, required method for game
+Gem.prototype.update = function() {
+};
 
 /*
 Resources Used to help build this:
