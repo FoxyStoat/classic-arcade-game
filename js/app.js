@@ -172,6 +172,19 @@ var allEnemies = [bug1, bug2, bug3, bug4, bug5];
 // Instance of Player
 var player = new Player(200, 400);
 
+//////// EXTRA -- Gems ////////
+/*
+TODO: Constructor function for the collectible
+gems, x and y will be the coordinates
+This class requires an update() and render() method.
+*/
+var Gem = function(x, y) {
+	this.sprite = "images/Gem Green.png";
+	this.x = x;
+	this.y = y;
+};
+
+
 /*
 Resources Used to help build this:
 * For generating a random speed for the movement of bugs
