@@ -94,7 +94,7 @@ var Engine = (function(global) {
             enemy.update(dt);
         });
         player.update();
-        gem.update();
+        // gem.update();
     }
 
 
