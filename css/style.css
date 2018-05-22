@@ -3,3 +3,8 @@ body {
 	/* Background pattern from Subtle Patterns */
 	background: url(../images/binding_dark.png);
 }
+
+h1 {
+	font-family: 'Aldrich', sans-serif;
+	color: #fff;
+}
