@@ -107,6 +107,8 @@ Player.prototype.collisionCheck = function() {
 			// console.log('Hit box collision!');
 			// Send player back to original coordinates
 			this.resetPlayer();
+			// Reset the gem to a different location
+			gem.update();
 		}
 	}
 };
@@ -189,28 +191,25 @@ var Gem = function(x, y) {
 Gem.prototype.render = function() {
 	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
- 
-// Gem update() method Update the gems position
+
+/*
+TODO: Gem update() method. Updates the gems position if the player collides
+with an enemy bug. Generates a gem in a random place on the road.
+*/
 Gem.prototype.update = function(x, y) {
 	// Coordinate options of gem to be located along x axis
 	var gemXCoordinates = [0, 100, 200, 300, 400];
 	// Coordinate options of gem to be located along y axis
 	var gemYCoordinates = [72, 154, 236];
-	/*
-	TODO: If the player has reached the water then generate a gem in a
-	random place on the road
-	*/
-	if (player.y <= 0) {
-		// arrow function to inherit 'this' value from surrounding content
-		setTimeout(() => {
-			this.x = gemXCoordinates[Math.floor(Math.random()*gemXCoordinates.length)];
-			this.y = gemYCoordinates[Math.floor(Math.random()*gemYCoordinates.length)];
-		}, 500);
-	}
+		this.x = gemXCoordinates[Math.floor(Math.random()*gemXCoordinates.length)];
+		// console.log(this.x);
+		this.y = gemYCoordinates[Math.floor(Math.random()*gemYCoordinates.length)];
+		// console.log(this.y);
 };
 
 // Instantiate Gem
-var gem = new Gem();
+// x and y coordinates are the initial value of gem
+var gem = new Gem(200, 154);
 
 /*
 Resources Used to help build this:
