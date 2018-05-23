@@ -194,13 +194,15 @@ Gem.prototype.render = function() {
 
 /*
 TODO: Gem update() method. Updates the gems position if the player collides
-with an enemy bug. Generates a gem in a random place on the road.
+with an enemy bug. Generates a gem in a random place on the road.  This method
+is called from the player collisionCheck, so if theres a collision with enemy
+update the gem coordinates.
 */
 Gem.prototype.update = function(x, y) {
 	// Coordinate options of gem to be located along x axis
-	var gemXCoordinates = [0, 100, 200, 300, 400];
+	const gemXCoordinates = [0, 100, 200, 300, 400];
 	// Coordinate options of gem to be located along y axis
-	var gemYCoordinates = [72, 154, 236];
+	const gemYCoordinates = [72, 154, 236];
 		this.x = gemXCoordinates[Math.floor(Math.random()*gemXCoordinates.length)];
 		// console.log(this.x);
 		this.y = gemYCoordinates[Math.floor(Math.random()*gemYCoordinates.length)];
