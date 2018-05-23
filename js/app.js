@@ -89,6 +89,8 @@ Player.prototype.update = function(dt) {
 
 	// Check to see if a collision happened
 	this.collisionCheck();
+	// Check to see if a collision between gem and player happened
+	this.gemPickUpCheck();
 };
 
 /*
@@ -112,6 +114,19 @@ Player.prototype.collisionCheck = function() {
 		}
 	}
 };
+
+/*
+TODO: Check for collisions between the player and a gem.  If a
+collision happens the gem will disappear and add 10 to score board 
+*/
+Player.prototype.gemPickUpCheck = function() {
+			if (this.x <= gem.x + 60 &&
+			this.x + 50 >= gem.x &&
+			this.y <= gem.y + 80 &&
+			70 + this.y >= gem.y) {
+			// console.log('Picked up gem!');
+	}
+}
 
 /*
 TODO: This resets the player back to it's original coordinates
