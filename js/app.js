@@ -120,13 +120,16 @@ TODO: Check for collisions between the player and a gem.  If a
 collision happens the gem will disappear and add 10 to score board 
 */
 Player.prototype.gemPickUpCheck = function() {
-			if (this.x <= gem.x + 60 &&
+		if (this.x <= gem.x + 60 &&
 			this.x + 50 >= gem.x &&
 			this.y <= gem.y + 80 &&
 			70 + this.y >= gem.y) {
-			// console.log('Picked up gem!');
-	}
-}
+			console.log('Picked up gem!');
+			// reposition the gem of canvas
+			gem.x = -600;
+			// add 10 points to score	
+		}
+};
 
 /*
 TODO: This resets the player back to it's original coordinates
