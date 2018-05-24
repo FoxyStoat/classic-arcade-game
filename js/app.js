@@ -3,7 +3,7 @@ TODO: Constructor function for the enemy (bugs)
 x and y will be the coordinates
 Enemies our player must avoid
 */
-var Enemy = function(x, y, movement) {
+const Enemy = function(x, y, movement) {
 	// Variables applied to each of our instances go here,
 	// we've provided one for you to get started
 
@@ -30,7 +30,7 @@ Enemy.prototype.update = function(dt) {
 	*/
 	if (this.x >= 505) {
 		this.x = -100;
-		this.movement = Math.floor(Math.random() * 250) + 150
+		this.movement = Math.floor(Math.random() * 250) + 150;
 		// console.log(this.movement);
 	} 
 };
@@ -47,7 +47,7 @@ character, x and y will be the coordinates
 This class requires an update(), render() and
 a handleInput() method.
 */
-var Player = function(x, y) {
+const Player = function(x, y) {
 	this.sprite = "images/char-boy.png";
 	this.x = x;
 	this.y = y;
@@ -100,7 +100,7 @@ For reference image is 101px width by 171px height
 */
 Player.prototype.collisionCheck = function() {
 	// loop through the enemy array
-	for (var i = 0; i < allEnemies.length; i++) {
+	for (let i = 0; i < allEnemies.length; i++) {
 		const bug = allEnemies[i];
 		if (this.x <= bug.x + 60 && //number is bug hitbox width
 			this.x + 50 >= bug.x && //number is player hitbox width
@@ -175,7 +175,7 @@ Player.prototype.handleInput = function(arrowKeys) {
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
-	var allowedKeys = {
+	const allowedKeys = {
 		37: 'left',
 		38: 'up',
 		39: 'right',
@@ -188,17 +188,17 @@ document.addEventListener('keyup', function(e) {
 // Now instantiate your objects.
 // Instances of Enemy for access to Enemy.protype methods
 // arguments are coordinates x & y & the third argument is initial movement speed
-var bug1 = new Enemy(-100, 60, 230); // top row bug
-var bug2 = new Enemy(-20, 145, 170); // middle row bug
-var bug3 = new Enemy(40, 225, 200); // bottom row bug
-var bug4 = new Enemy(40, 225, 240); //bottom row bug
-var bug5 = new Enemy(-40, 60, 300); //top row bug
+const bug1 = new Enemy(-100, 60, 230); // top row bug
+const bug2 = new Enemy(-20, 145, 170); // middle row bug
+const bug3 = new Enemy(40, 225, 200); // bottom row bug
+const bug4 = new Enemy(40, 225, 240); //bottom row bug
+const bug5 = new Enemy(-40, 60, 300); //top row bug
 // Place all enemy objects in an array called allEnemies
-var allEnemies = [bug1, bug2, bug3, bug4, bug5];
+const allEnemies = [bug1, bug2, bug3, bug4, bug5];
 
 // Place the player object in a variable called player
 // Instance of Player
-var player = new Player(200, 400);
+const player = new Player(200, 400);
 
 //////// EXTRA -- Gems ////////
 /*
@@ -206,7 +206,7 @@ TODO: Constructor function for the collectible
 gems, x and y will be the coordinates
 This class requires an update() and render() method.
 */
-var Gem = function(x, y) {
+const Gem = function(x, y) {
 	this.sprite = "images/Gem Green.png";
 	this.x = x;
 	this.y = y;
@@ -237,7 +237,7 @@ Gem.prototype.update = function(x, y) {
 
 // Instantiate Gem
 // x and y coordinates are the initial value of gem
-var gem = new Gem(200, 154);
+const gem = new Gem(200, 154);
 
 /*
 Resources Used to help build this:
