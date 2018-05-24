@@ -109,8 +109,6 @@ Player.prototype.collisionCheck = function() {
 			// console.log('Hit box collision!');
 			// Send player back to original coordinates
 			this.resetPlayer();
-			// Reset the gem to a different location on collision
-			gem.update();
 		}
 	}
 };
@@ -136,6 +134,8 @@ TODO: This resets the player back to it's original coordinates
 Player.prototype.resetPlayer = function() {
 	this.x = 200;
 	this.y = 400;
+	// Respawn a gem in a new location if the player gets reset
+	gem.update();
 };
 
 /*
