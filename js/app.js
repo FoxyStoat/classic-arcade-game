@@ -125,6 +125,8 @@ Player.prototype.gemPickUpCheck = function() {
 		console.log('Picked up gem!');
 		// Reposition the gem off canvas
 		gem.x = -600;
+		// Add 10 to the total score on gem pick up
+		this.totalScore += 10;
 	}
 };
 
