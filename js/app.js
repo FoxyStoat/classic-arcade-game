@@ -65,13 +65,9 @@ TODO: Check to see if the player has reached the water for a win (ftw)
 Player.prototype.update = function() {
 	// If character reaches the water
 	if (this.y <= 0) {
-		// Increment moves by 30
+		// Increment total score by 30
 		this.totalScore += 30;
-		// arrow function to inherit 'this' value from surrounding content
-		setTimeout(() => {
-			// reset the player after half a second
-			this.resetPlayer();
-		}, 500);
+		this.resetPlayer();
 	}
 
 	/*
