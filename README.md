@@ -17,8 +17,7 @@ The aim of the game is to navigate the character from the grass to the water and
 
 Your score will be updated if your player reaches the water, a gem is picked up and if a collision happens between player and a bug.
 
-
-Need to update this section and also add screen shot of working game and a link to live demo once project is complete
+![screenshot of finished game](images/screenshot-finished-game.png "screenshot of finished game") 
 
 ## Project Specifications
 
