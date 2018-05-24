@@ -135,6 +135,7 @@ Player.prototype.gemPickUpCheck = function() {
 
 /*
 TODO: This resets the player back to it's original coordinates
+and respawns a gem in a new location
 */
 Player.prototype.resetPlayer = function() {
 	this.x = 200;
