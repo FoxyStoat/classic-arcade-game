@@ -51,6 +51,7 @@ var Player = function(x, y) {
 	this.sprite = "images/char-boy.png";
 	this.x = x;
 	this.y = y;
+	this.totalScore = 0;
 };
 
 // Player update()
@@ -61,11 +62,14 @@ TODO: Check to see if the player has reached the water for a win (ftw)
 - The second bit of code will keep the player within the canvas boundaries
 - And also check if a collision has happened between bug and player
 */
-Player.prototype.update = function(dt) {
+Player.prototype.update = function() {
 	// If character reaches the water
 	if (this.y <= 0) {
+		// Increment moves by 30
+		this.totalScore += 30;
 		// arrow function to inherit 'this' value from surrounding content
 		setTimeout(() => {
+			// reset the player after half a second
 			this.resetPlayer();
 		}, 500);
 	}
@@ -109,7 +113,7 @@ Player.prototype.collisionCheck = function() {
 			// console.log('Hit box collision!');
 			// Send player back to original coordinates
 			this.resetPlayer();
-			// Reset the gem to a different location
+			// Reset the gem to a different location on collision
 			gem.update();
 		}
 	}
@@ -117,18 +121,17 @@ Player.prototype.collisionCheck = function() {
 
 /*
 TODO: Check for collisions between the player and a gem.  If a
-collision happens the gem will disappear and add 10 to score board 
+collision happens the gem will disappear
 */
 Player.prototype.gemPickUpCheck = function() {
-		if (this.x <= gem.x + 60 &&
-			this.x + 50 >= gem.x &&
-			this.y <= gem.y + 80 &&
-			70 + this.y >= gem.y) {
-			console.log('Picked up gem!');
-			// reposition the gem of canvas
-			gem.x = -600;
-			// add 10 points to score	
-		}
+	if (this.x <= gem.x + 60 &&
+		this.x + 50 >= gem.x &&
+		this.y <= gem.y + 80 &&
+		70 + this.y >= gem.y) {
+		console.log('Picked up gem!');
+		// Reposition the gem off canvas
+		gem.x = -600;
+	}
 };
 
 /*
@@ -139,10 +142,15 @@ Player.prototype.resetPlayer = function() {
 	this.y = 400;
 };
 
-// Player render()
-// Draw the player on the screen, required method for game
+/*
+TODO: Player render() Draw the player on the screen, required method
+for game.  This method also updates the total scores on canvas
+*/
 Player.prototype.render = function() {
 	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+	ctx.fillStyle = "#fff";
+	ctx.font = "25px Aldrich, sans-serif";
+	ctx.fillText("Total Score: " + this.totalScore, 10, 100); //location of score on canvas
 };
 
 // Player handleInput() method
