@@ -54,11 +54,11 @@ var Player = function(x, y) {
 	this.totalScore = 0;
 };
 
-// Player update()
 /*
+Player update()
 TODO: Check to see if the player has reached the water for a win (ftw)
 - If the player reaches the water, reset the player back to original
-	coordinates after half a second.
+	coordinates.
 - The second bit of code will keep the player within the canvas boundaries
 - And also check if a collision has happened between bug and player
 */
@@ -149,8 +149,8 @@ Player.prototype.render = function() {
 	ctx.fillText("Total Score: " + this.totalScore, 10, 100); //location of score on canvas
 };
 
-// Player handleInput() method
 /*
+Player handleInput() method
 TODO: This sets the direction of the player, and uses
 the event listener directly below.
 */
