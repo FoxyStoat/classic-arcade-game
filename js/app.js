@@ -109,6 +109,8 @@ Player.prototype.collisionCheck = function() {
 			// console.log('Hit box collision!');
 			// Send player back to original coordinates
 			this.resetPlayer();
+			// Lose 5 points from score
+			this.totalScore -= 5;
 		}
 	}
 };
@@ -122,11 +124,11 @@ Player.prototype.gemPickUpCheck = function() {
 		this.x + 50 >= gem.x &&
 		this.y <= gem.y + 80 &&
 		70 + this.y >= gem.y) {
-		console.log('Picked up gem!');
+		// console.log('Picked up gem!');
 		// Reposition the gem off canvas
 		gem.x = -600;
-		// Add 10 to the total score on gem pick up
-		this.totalScore += 10;
+		// Add 5 to the total score on gem pick up
+		this.totalScore += 5;
 	}
 };
 
