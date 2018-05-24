@@ -8,11 +8,15 @@ This is a project from Udacity here is the [repo link](https://github.com/udacit
 
 ### How To Play The Game
 
-Clone or download this repo to your local machine, unzip and open the index.html file in your prefered browser.
+Clone or download this repo to your local machine, unzip and then open the index.html file in your prefered browser.
 
-Or you can click this (this is currently a dead link needs updating [link]() to view a live demo hosted on GitHub pages.
+Alternatively you can click this [link](https://foxystoat.github.io/classic-arcade-game/) to view a live demo hosted on GitHub pages.
 
-The aim of the game is to use the arrow keys on your keyboard to navigate the character from the grass to the water and avoid all the bugs.
+Use the **arrow keys** on your keyboard to control the player.
+The aim of the game is to navigate the character from the grass to the water and avoid all the bugs.
+
+Your score will be updated if your player reaches the water, a gem is picked up and if a collision happens between player and a bug.
+
 
 Need to update this section and also add screen shot of working game and a link to live demo once project is complete
 
@@ -38,7 +42,7 @@ Students are to meet project specifications from the rubric:
 * Code Quality - Code is formatted with consistent, logical, and easy-to-read formatting as described in the Udacity JavaScript Style Guide.
 
 * Extra - Provide additional functionality to the game beyond the minimum reqirements:
-	- Add collectibles
-	- Multiple enemy types
-	- Timed game
+	- Add collectibles?
+	- Multiple enemy types?
+	- Timed game?
 	- Be creative!
