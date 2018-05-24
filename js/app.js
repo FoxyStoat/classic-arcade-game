@@ -60,7 +60,8 @@ TODO: Check to see if the player has reached the water for a win (ftw)
 - If the player reaches the water, reset the player back to original
 	coordinates.
 - The second bit of code will keep the player within the canvas boundaries
-- And also check if a collision has happened between bug and player
+- Check if a collision has happened between bug and player
+- Check to see if a collision has happened between a player and a gem
 */
 Player.prototype.update = function() {
 	// If character reaches the water
