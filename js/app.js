@@ -257,4 +257,6 @@ https://discussions.udacity.com/t/collision-detection-not-working-player-also-no
 * Used below resource to help generate a random gem coordinate from array:
 https://css-tricks.com/snippets/javascript/select-random-item-array/
 
+* Resource used to help with update score and render to canvas
+https://www.w3schools.com/html/html5_canvas.asp
 */
