@@ -58,7 +58,7 @@ const Player = function(x, y) {
 Player update()
 TODO: Check to see if the player has reached the water for a win (ftw)
 - If the player reaches the water, reset the player back to original
-	coordinates.
+	coordinates and add 30 to the score.
 - The second bit of code will keep the player within the canvas boundaries
 - Check if a collision has happened between bug and player
 - Check to see if a collision has happened between a player and a gem
